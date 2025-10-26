@@ -18,13 +18,13 @@ defineProps<{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px; /* 相同的字体大小 */
-  text-align: right; /* 文本右对齐 */
+  font-size: 14px;
+  text-align: right;
   width: 100%;
   margin-top: 10px;
 }
 
 .category, .organizer {
-  font-size: 14px; /* 确保两者字体大小相同 */
+  font-size: 14px;
 }
 </style>

@@ -1,13 +1,3 @@
-export interface Student {
-  id: number
-  name: string
-  surname: string
-  gpa: number
-  image: string
-  penAmount: number
-  description: string
-}
-
 export interface Event {
   id: number
   category: string
@@ -18,4 +8,13 @@ export interface Event {
   time: string
   petsAllowed: boolean
   organizer: string
+}
+export interface Student {
+  id: number
+  name: string
+  surname: string
+  gpa: number
+  image: string
+  penAmount: number
+  description: string
 }

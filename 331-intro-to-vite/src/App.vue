@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
+const globalPerPage = ref(2)
 </script>
 
 <template>
@@ -7,14 +9,24 @@ import { RouterLink, RouterView } from 'vue-router'
     <header>
       <div class="wrapper">
         <nav>
-          <RouterLink to="/">Event</RouterLink> |
-          <RouterLink to="/students">Students</RouterLink> |
-          <RouterLink to="/about">About</RouterLink>
+          <RouterLink :to="{ name: 'event-list-view' }">Event</RouterLink> |
+          <RouterLink :to="{ name: 'students' }">Students</RouterLink> |
+          <RouterLink :to="{ name: 'about' }">About</RouterLink>
         </nav>
+        <div class="global-page-size">
+          <label>Event per page: </label>
+          <select v-model="globalPerPage">
+            <option value="2">Two Events</option>
+            <option value="4">Four Events</option>
+            <option value="6">Six Events</option>
+            <option value="8">Eight Events</option>
+          </select>
+        </div>
       </div>
+      
     </header>
     
-    <RouterView />
+    <RouterView :per-page="globalPerPage" />
   </div>
 </template>
 
@@ -38,6 +50,25 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+.global-page-size {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.global-page-size label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.global-page-size select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
 }
 
 h2 {

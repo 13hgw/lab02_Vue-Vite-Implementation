@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'https://my-json-server.typicode.com/[你的用户名]/[你的仓库名]',
+  baseURL: 'https://my-json-server.typicode.com/LJH-z1/vue-mock-data',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
@@ -10,7 +10,10 @@ const apiClient = axios.create({
 })
 
 export default {
-  getEvents() {
-    return apiClient.get('/events')
+ getEvents(perPage: Number, page: Number) {
+    return apiClient.get(`/events?_limit=${perPage}&_page=${page}`)
+  },
+  getEvent(id: number) {
+    return apiClient.get('/events/' + id)
   }
 }
