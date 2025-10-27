@@ -18,3 +18,9 @@ export interface Student {
   penAmount: number
   description: string
 }
+export interface MessageState {
+  message: string
+}
+export interface EventState {
+  event: Event | null
+}
