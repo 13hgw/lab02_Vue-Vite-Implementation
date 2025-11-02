@@ -97,7 +97,7 @@ const router = createRouter({
       component: StudentListView
     }
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_to, _from, savedPosition) {
     if (savedPosition) {
       return savedPosition
     } else {

@@ -14,7 +14,7 @@ defineProps<{
 </template>
 
 <style scoped>
-.event-meta {
+/* .event-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,5 +26,5 @@ defineProps<{
 
 .category, .organizer {
   font-size: 14px;
-}
+} */
 </style>

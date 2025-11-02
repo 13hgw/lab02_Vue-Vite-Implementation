@@ -14,13 +14,13 @@ const props = defineProps({
     type: Number,
     required: true,
   },
-  perPage: {
-    type: Number,
-    default: 2,
-  }
+  // perPage: {
+  //   type: Number,
+  //   default: 2,
+  // }
 })
 const page = computed(() => props.page)
-const perPage = computed(() => props.perPage)
+// const perPage = computed(() => props.perPage)
 onMounted(() => {
   watchEffect(() => {
     EventService.getEvents(3, page.value)
@@ -38,7 +38,7 @@ onMounted(() => {
 <template>
     <h1>Events For Good</h1>
     <!-- new element -->
-    <div class="events">
+    <div class="flex flex-col items-center">
         <EventCard v-for="event in events" :key="event.id" :event="event" />
     <div class="pagination">
       <RouterLink
@@ -62,11 +62,6 @@ onMounted(() => {
 
 </template>
 <style scoped>
-.events {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .pagination {
   display: flex;

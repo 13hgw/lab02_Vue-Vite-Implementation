@@ -9,17 +9,18 @@ const globalPerPage = ref(2)
 </script>
 
 <template>
-  <div id="layout">
+  <SpeedInsights />
+  <div class="text-center font-sans text-gray-700 antialias"> 
     <header>
-      <div id="flashMessage" v-if="message">
+      <div id="flashMessage" class="animate-fade" v-if="message">
         <h4>{{ message }}</h4>
       </div>
+      <h1>Deploy with Vercel</h1>
 
       <div class="wrapper">
-        <nav>
-          <RouterLink :to="{ name: 'event-list-view' }">Event</RouterLink> |
-          <RouterLink :to="{ name: 'students' }">Students</RouterLink> |
-          <RouterLink :to="{ name: 'about' }">About</RouterLink>
+        <nav class="py-6">
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'event-list-view' }">Event</RouterLink> |
+          <RouterLink class="font-bold text-gray-700" exact-active-class="text-green-500" :to="{ name: 'about' }">About</RouterLink>
         </nav>
         <div class="global-page-size">
           <label>Event per page: </label>
@@ -39,15 +40,9 @@ const globalPerPage = ref(2)
 </template>
 
 <style>
-#layout {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
+
+/* nav {
   padding: 30px;
 }
 
@@ -92,6 +87,6 @@ h2 {
 }
 #flashMessage {
   animation: yellofade 3s ease-in-out;
-}
+} */
 
 </style>

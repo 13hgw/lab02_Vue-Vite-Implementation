@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+h1{
+    @apply text-4xl mb-8
+  }
+#flashMessage {
+  @apply p-2 border-b-2 border-yellow-400;
+}
+#flashMessage h4 {
+  @apply m-0 text-yellow-800 font-bold;
+}
